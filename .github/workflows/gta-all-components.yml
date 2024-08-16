@@ -13,3 +13,16 @@ jobs:
     uses: ./.github/workflows/gta-data-service.yml
     with:
       sample: ${{ inputs.sample }}
+
+  gta-data-service-2:
+    name: "GTA: Data Service 2"
+    uses: ./.github/workflows/gta-data-service-2.yml
+    with:
+      sample: ${{ inputs.sample }}
+
+  gta-data-service-3:
+    needs: [gta-data-service, gta-data-service-2]
+    name: "GTA: Data Service 3"
+    uses: ./.github/workflows/gta-data-service-3.yml
+    with:
+      sample: ${{ inputs.sample }}

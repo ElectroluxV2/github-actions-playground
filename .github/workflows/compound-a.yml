@@ -8,7 +8,12 @@ on:
         type: string
 
 jobs:
-  compound-a:
+  compound-a-component-0:
     uses: ./.github/workflows/compound-a-component-0.yml
+    with:
+      sample: ${{ inputs.sample }}
+
+  compound-a-component-1:
+    uses: ./.github/workflows/compound-a-component-1.yml
     with:
       sample: ${{ inputs.sample }}

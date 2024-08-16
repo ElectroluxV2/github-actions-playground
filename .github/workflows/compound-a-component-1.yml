@@ -1,0 +1,23 @@
+name: Component 1
+
+on:
+  workflow_call:
+    inputs:
+      sample:
+        required: true
+        type: string
+
+jobs:
+  component-1-j0:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 0
+        run: |
+          echo "sample: ${{ inputs.sample }}"
+
+  component-1-j2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 0
+        run: |
+          echo "sample: ${{ inputs.sample }}"

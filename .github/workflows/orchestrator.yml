@@ -9,7 +9,7 @@ on:
 
 jobs:
   compound-a:
-    uses: ./.github/workflows/compound-a-all-components.yml
+    uses: ./.github/workflows/pfs-all-components.yml
     with:
       sample: ${{ inputs.sample }}
 

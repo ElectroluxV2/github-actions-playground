@@ -8,7 +8,7 @@ on:
         type: string
 
 jobs:
-  compound-omicron:
+  compound-a:
     uses: ./.github/workflows/compound-a.yml
     with:
       sample: ${{ inputs.sample }}

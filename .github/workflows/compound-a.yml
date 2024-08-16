@@ -8,7 +8,7 @@ on:
         type: string
 
 jobs:
-  obnoxious:
+  compound-a:
     uses: ./.github/workflows/compound-a-component-0.yml
     with:
       sample: ${{ inputs.sample }}

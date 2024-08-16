@@ -25,3 +25,27 @@ jobs:
     uses: ./.github/workflows/dcp-data-service.yml
     with:
       sample: ${{ inputs.sample }}
+
+  dcp-data-service-2:
+    name: "DCP: Data Service 2"
+    uses: ./.github/workflows/dcp-data-service-2.yml
+    with:
+      sample: ${{ inputs.sample }}
+
+  dcp-data-service-3:
+    name: "DCP: Data Service 3"
+    uses: ./.github/workflows/dcp-data-service-3.yml
+    with:
+      sample: ${{ inputs.sample }}
+
+  dcp-data-service-4:
+    name: "DCP: Data Service 4"
+    uses: ./.github/workflows/dcp-data-service-4.yml
+    with:
+      sample: ${{ inputs.sample }}
+
+  dcp-data-service-5:
+    name: "DCP: Data Service 5"
+    uses: ./.github/workflows/dcp-data-service-5.yml
+    with:
+      sample: ${{ inputs.sample }}

@@ -1,0 +1,14 @@
+name: Compound Omicron
+
+on:
+  workflow_call:
+    inputs:
+      sample:
+        required: true
+        type: string
+
+jobs:
+  obnoxious:
+    uses: ./.github/workflows/omicron/components/obnoxious.yml
+    with:
+      sample: ${{ inputs.sample }}

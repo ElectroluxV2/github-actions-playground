@@ -1,0 +1,24 @@
+name: Orchestrator
+on:
+  workflow_dispatch:
+    inputs:
+      sample:
+        description: bubbled-down
+        required: true
+        type: string
+
+jobs:
+  compound-omicron:
+    uses: ./.github/workflows/omicron/compound.yml
+    with:
+      sample: ${{ inputs.sample }}
+
+#  component-theta:
+#    uses: ./.github/workflows/component-theta.yml
+#    with:
+#      sample: ${{ inputs.sample }}
+#
+#  component-upsilon:
+#    uses: ./.github/workflows/component-upsilon.yml
+#    with:
+#      sample: ${{ inputs.sample }}

@@ -1,16 +1,16 @@
-name: Third level
+name: Obnoxious
 
 on:
   workflow_call:
     inputs:
-      environment:
+      sample:
         required: true
         type: string
 
 jobs:
-  third-level-0:
+  obnoxious:
     runs-on: ubuntu-latest
     steps:
       - name: step-0
         run: |
-          echo "ENV: ${{ inputs.environment }}"
+          echo "sample: ${{ inputs.sample }}"

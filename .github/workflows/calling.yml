@@ -2,7 +2,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  call-reusable-workflow:
+  p0:
     uses: ./.github/workflows/build-test.yml
     with:
-      environment: production
+      environment: p0
+  p1:
+    uses: ./.github/workflows/build-test.yml
+    with:
+      environment: p1
+  p2:
+    uses: ./.github/workflows/build-test.yml
+    with:
+      environment: p2

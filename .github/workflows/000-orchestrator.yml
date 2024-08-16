@@ -29,7 +29,13 @@ jobs:
       sample: ${{ inputs.sample }}
 
   proxy:
-    name: "Proxy: Gateway"
-    uses: ./.github/workflows/proxy-gateway.yml
+    needs: [dcp]
+    name: "Proxy: All components"
+    uses: ./.github/workflows/proxy-all-components.yml
     with:
       sample: ${{ inputs.sample }}
+
+  gta:
+    needs: [drm]
+    name: "GTA: All components"
+    uses: ./.github/workflows/gta-all-components.yml

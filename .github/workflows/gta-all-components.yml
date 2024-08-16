@@ -1,0 +1,15 @@
+name: "GTA: All components"
+
+on:
+  workflow_call:
+    inputs:
+      sample:
+        required: true
+        type: string
+
+jobs:
+  gta-data-service:
+    name: "GTA: Data Service"
+    uses: ./.github/workflows/gta-data-service.yml
+    with:
+      sample: ${{ inputs.sample }}

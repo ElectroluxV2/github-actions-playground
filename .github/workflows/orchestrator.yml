@@ -9,7 +9,7 @@ on:
 
 jobs:
   compound-omicron:
-    uses: ./.github/workflows/omicron/compound.yml
+    uses: ./.github/workflows/compound-a.yml
     with:
       sample: ${{ inputs.sample }}
 

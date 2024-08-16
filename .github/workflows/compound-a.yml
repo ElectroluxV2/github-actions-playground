@@ -1,4 +1,4 @@
-name: Compound Omicron
+name: Compound A
 
 on:
   workflow_call:
@@ -9,6 +9,6 @@ on:
 
 jobs:
   obnoxious:
-    uses: ./.github/workflows/omicron/components/obnoxious.yml
+    uses: ./.github/workflows/compound-a-component-0.yml.yml
     with:
       sample: ${{ inputs.sample }}

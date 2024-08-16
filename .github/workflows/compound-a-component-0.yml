@@ -1,4 +1,4 @@
-name: Obnoxious
+name: Component 0
 
 on:
   workflow_call:
@@ -8,9 +8,9 @@ on:
         type: string
 
 jobs:
-  obnoxious:
+  component-0:
     runs-on: ubuntu-latest
     steps:
-      - name: step-0
+      - name: Step 0
         run: |
           echo "sample: ${{ inputs.sample }}"

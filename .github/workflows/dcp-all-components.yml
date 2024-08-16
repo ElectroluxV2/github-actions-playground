@@ -37,15 +37,3 @@ jobs:
     uses: ./.github/workflows/dcp-data-service-3.yml
     with:
       sample: ${{ inputs.sample }}
-
-  dcp-data-service-4:
-    name: "DCP: Data Service 4"
-    uses: ./.github/workflows/dcp-data-service-4.yml
-    with:
-      sample: ${{ inputs.sample }}
-
-  dcp-data-service-5:
-    name: "DCP: Data Service 5"
-    uses: ./.github/workflows/dcp-data-service-5.yml
-    with:
-      sample: ${{ inputs.sample }}

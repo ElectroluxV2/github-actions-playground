@@ -1,4 +1,4 @@
-name: "PFS: SDK"
+name: "DCP: API Gateway"
 
 on:
   workflow_call:
@@ -8,8 +8,8 @@ on:
         type: string
 
 jobs:
-  sdk:
-    name: "PFS: SDK"
+  api-gateway:
+    name: "DCP: API Gateway"
     runs-on: ubuntu-latest
     steps:
       - name: Step 0

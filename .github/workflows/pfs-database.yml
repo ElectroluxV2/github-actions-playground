@@ -9,6 +9,7 @@ on:
 
 jobs:
   pfs-database:
+    name: "PFS: Database"
     runs-on: ubuntu-latest
     steps:
       - name: Step 0

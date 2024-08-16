@@ -1,4 +1,4 @@
-name: "PFS: SDK"
+name: "DCP: Data Service"
 
 on:
   workflow_call:
@@ -8,8 +8,8 @@ on:
         type: string
 
 jobs:
-  sdk:
-    name: "PFS: SDK"
+  data-service:
+    name: "DCP: Data Service"
     runs-on: ubuntu-latest
     steps:
       - name: Step 0

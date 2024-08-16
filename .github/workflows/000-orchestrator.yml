@@ -14,12 +14,8 @@ jobs:
     with:
       sample: ${{ inputs.sample }}
 
-#  component-theta:
-#    uses: ./.github/workflows/component-theta.yml
-#    with:
-#      sample: ${{ inputs.sample }}
-#
-#  component-upsilon:
-#    uses: ./.github/workflows/component-upsilon.yml
-#    with:
-#      sample: ${{ inputs.sample }}
+  dcp:
+    name: "DCP: All components"
+    uses: ./.github/workflows/dcp-all-components.yml
+    with:
+      sample: ${{ inputs.sample }}

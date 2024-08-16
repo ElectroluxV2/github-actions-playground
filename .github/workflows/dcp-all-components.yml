@@ -1,0 +1,27 @@
+name: "DCP: All components"
+
+on:
+  workflow_call:
+    inputs:
+      sample:
+        required: true
+        type: string
+
+jobs:
+  dcp-database:
+    name: "DCP: Database"
+    uses: ./.github/workflows/dcp-database.yml
+    with:
+      sample: ${{ inputs.sample }}
+
+  dcp-api-gateway:
+    name: "dcp: API Gateway"
+    uses: ./.github/workflows/dcp-api-gateway.yml
+    with:
+      sample: ${{ inputs.sample }}
+
+  dcp-data-service:
+    name: "dcp: Data Service"
+    uses: ./.github/workflows/dcp-data-service.yml
+    with:
+      sample: ${{ inputs.sample }}

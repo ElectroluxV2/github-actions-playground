@@ -8,7 +8,8 @@ on:
         type: string
 
 jobs:
-  compound-a:
+  pfs:
+    name: "PFS: All components"
     uses: ./.github/workflows/pfs-all-components.yml
     with:
       sample: ${{ inputs.sample }}

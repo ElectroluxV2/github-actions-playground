@@ -9,11 +9,13 @@ on:
 
 jobs:
   pfs-database:
+    name: "PFS: Database"
     uses: ./.github/workflows/pfs-database.yml
     with:
       sample: ${{ inputs.sample }}
 
   pfs-sdk:
+    name: "PFS: SDK"
     uses: ./.github/workflows/pfs-sdk.yml
     with:
       sample: ${{ inputs.sample }}

@@ -14,6 +14,24 @@ jobs:
     with:
       sample: ${{ inputs.sample }}
 
+  drm-database-2:
+    name: "DRM: Database 2"
+    uses: ./.github/workflows/drm-database-2.yml
+    with:
+      sample: ${{ inputs.sample }}
+
+  drm-database-3:
+    name: "DRM: Database 3"
+    uses: ./.github/workflows/drm-database-3.yml
+    with:
+      sample: ${{ inputs.sample }}
+
+  drm-database-4:
+    name: "DRM: Database 4"
+    uses: ./.github/workflows/drm-database-4.yml
+    with:
+      sample: ${{ inputs.sample }}
+
   drm-sdk:
     name: "DRM: SDK"
     uses: ./.github/workflows/drm-sdk.yml

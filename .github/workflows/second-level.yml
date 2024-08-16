@@ -1,0 +1,19 @@
+name: Second level
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+
+jobs:
+  second-level-0:
+    uses: ./.github/workflows/third-level.yml
+    with:
+      environment: ${{ inputs.environment }}
+
+  second-level-1:
+    uses: ./.github/workflows/third-level.yml
+    with:
+      environment: ${{ inputs.environment }}

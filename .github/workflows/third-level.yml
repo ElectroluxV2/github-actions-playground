@@ -1,0 +1,16 @@
+name: Third level
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+
+jobs:
+  third-level-0:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step-0
+        run: |
+          echo "ENV: ${{ inputs.environment }}"

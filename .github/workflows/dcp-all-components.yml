@@ -15,13 +15,13 @@ jobs:
       sample: ${{ inputs.sample }}
 
   dcp-api-gateway:
-    name: "dcp: API Gateway"
+    name: "DCP: API Gateway"
     uses: ./.github/workflows/dcp-api-gateway.yml
     with:
       sample: ${{ inputs.sample }}
 
   dcp-data-service:
-    name: "dcp: Data Service"
+    name: "DCP: Data Service"
     uses: ./.github/workflows/dcp-data-service.yml
     with:
       sample: ${{ inputs.sample }}

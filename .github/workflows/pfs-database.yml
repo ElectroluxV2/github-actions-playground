@@ -8,10 +8,11 @@ on:
         type: string
 
 jobs:
-  pfs-database:
-    name: "PFS: Database"
+  deploy:
+    name: "Grate kickoff"
     runs-on: ubuntu-latest
     steps:
-      - name: Step 0
-        run: |
-          echo "sample: ${{ inputs.sample }}"
+    - name: "Download bundle"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Grate kickoff"
+      run: "echo sample: ${{ inputs.sample }}"

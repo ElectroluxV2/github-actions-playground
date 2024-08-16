@@ -15,6 +15,7 @@ jobs:
       sample: ${{ inputs.sample }}
 
   dcp:
+    needs: [pfs]
     name: "DCP: All components"
     uses: ./.github/workflows/dcp-all-components.yml
     with:

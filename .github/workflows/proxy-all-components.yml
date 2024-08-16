@@ -1,0 +1,15 @@
+name: "Proxy: All components"
+
+on:
+  workflow_call:
+    inputs:
+      sample:
+        required: true
+        type: string
+
+jobs:
+  proxy-gateway:
+    name: "Proxy: Gateway"
+    uses: ./.github/workflows/proxy-gateway.yml
+    with:
+      sample: ${{ inputs.sample }}

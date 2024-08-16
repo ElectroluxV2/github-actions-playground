@@ -22,7 +22,14 @@ jobs:
       sample: ${{ inputs.sample }}
 
   drm:
+    needs: [pfs]
     name: "DRM: All components"
     uses: ./.github/workflows/drm-all-components.yml
+    with:
+      sample: ${{ inputs.sample }}
+
+  proxy:
+    name: "Proxy: Gateway"
+    uses: ./.github/workflows/proxy-gateway.yml
     with:
       sample: ${{ inputs.sample }}

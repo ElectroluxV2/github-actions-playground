@@ -9,6 +9,6 @@ on:
 
 jobs:
   obnoxious:
-    uses: ./.github/workflows/compound-a-component-0.yml.yml
+    uses: ./.github/workflows/compound-a-component-0.yml
     with:
       sample: ${{ inputs.sample }}

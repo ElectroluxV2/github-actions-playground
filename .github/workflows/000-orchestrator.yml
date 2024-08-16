@@ -39,3 +39,5 @@ jobs:
     needs: [drm]
     name: "GTA: All components"
     uses: ./.github/workflows/gta-all-components.yml
+    with:
+      sample: ${{ inputs.sample }}

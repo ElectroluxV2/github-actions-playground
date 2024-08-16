@@ -25,9 +25,3 @@ jobs:
     uses: ./.github/workflows/pfs-sdk-2.yml
     with:
       sample: ${{ inputs.sample }}
-
-  pfs-sdk-3:
-    name: "PFS: SDK 3"
-    uses: ./.github/workflows/pfs-sdk-3.yml
-    with:
-      sample: ${{ inputs.sample }}

@@ -20,3 +20,9 @@ jobs:
     uses: ./.github/workflows/dcp-all-components.yml
     with:
       sample: ${{ inputs.sample }}
+
+  drm:
+    name: "DRM: All components"
+    uses: ./.github/workflows/drm-all-components.yml
+    with:
+      sample: ${{ inputs.sample }}

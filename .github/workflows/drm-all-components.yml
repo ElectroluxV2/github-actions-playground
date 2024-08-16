@@ -1,0 +1,21 @@
+name: "DRM: All components"
+
+on:
+  workflow_call:
+    inputs:
+      sample:
+        required: true
+        type: string
+
+jobs:
+  drm-database:
+    name: "DRM: Database"
+    uses: ./.github/workflows/drm-database.yml
+    with:
+      sample: ${{ inputs.sample }}
+
+  drm-sdk:
+    name: "DRM: SDK"
+    uses: ./.github/workflows/drm-sdk.yml
+    with:
+      sample: ${{ inputs.sample }}

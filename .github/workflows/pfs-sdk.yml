@@ -1,4 +1,4 @@
-name: Component 1
+name: "PFS: SDK"
 
 on:
   workflow_call:
@@ -8,14 +8,7 @@ on:
         type: string
 
 jobs:
-  component-1-j0:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Step 0
-        run: |
-          echo "sample: ${{ inputs.sample }}"
-
-  component-1-j2:
+  sdk:
     runs-on: ubuntu-latest
     steps:
       - name: Step 0

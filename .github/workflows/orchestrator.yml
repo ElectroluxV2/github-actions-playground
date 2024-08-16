@@ -3,13 +3,13 @@ on:
   workflow_dispatch:
     inputs:
       sample:
-        description: bubbled-down
+        description: Bubbled-down
         required: true
         type: string
 
 jobs:
   compound-a:
-    uses: ./.github/workflows/compound-a.yml
+    uses: ./.github/workflows/compound-a-all-components.yml
     with:
       sample: ${{ inputs.sample }}
 

@@ -1,4 +1,4 @@
-name: Compound A
+name: "PFS: All components"
 
 on:
   workflow_call:
@@ -8,12 +8,12 @@ on:
         type: string
 
 jobs:
-  compound-a-component-0:
-    uses: ./.github/workflows/compound-a-component-0.yml
+  pfs-database:
+    uses: ./.github/workflows/pfs-database.yml
     with:
       sample: ${{ inputs.sample }}
 
-  compound-a-component-1:
-    uses: ./.github/workflows/compound-a-component-1.yml
+  pfs-sdk:
+    uses: ./.github/workflows/pfs-sdk.yml
     with:
       sample: ${{ inputs.sample }}

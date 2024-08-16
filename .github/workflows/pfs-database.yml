@@ -1,4 +1,4 @@
-name: Component 0
+name: "PFS: Database"
 
 on:
   workflow_call:
@@ -8,7 +8,7 @@ on:
         type: string
 
 jobs:
-  component-0:
+  pfs-database:
     runs-on: ubuntu-latest
     steps:
       - name: Step 0

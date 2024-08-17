@@ -69,7 +69,7 @@ jobs:
       run: "echo sample: ${{ inputs.sample }}"
     - name: "Kubectl apply"
       run: "echo sample: ${{ inputs.sample }}"
-  dcp-data-service-2:
+  dcp-data-service2:
     name: "Dcp.Data.Service2"
     needs: [pfs-database, pfs-sdk, pfs-sdk2] # pfs-all-components
     runs-on: ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
       run: "echo sample: ${{ inputs.sample }}"
     - name: "Kubectl apply"
       run: "echo sample: ${{ inputs.sample }}"
-  dcp-data-service-3:
+  dcp-data-service3:
     name: "Dcp.Data.Service3"
     needs: [pfs-database, pfs-sdk, pfs-sdk2] # pfs-all-components
     runs-on: ubuntu-latest
@@ -101,7 +101,7 @@ jobs:
       run: "echo sample: ${{ inputs.sample }}"
     - name: "Grate kickoff"
       run: "echo sample: ${{ inputs.sample }}"
-  drm-database-2:
+  drm-database2:
     name: "Drm.Database2"
     needs: [pfs-database, pfs-sdk, pfs-sdk2] # pfs-all-components
     runs-on: ubuntu-latest
@@ -136,7 +136,29 @@ jobs:
   # gta-all-components [drm]
   gta-data-service:
     name: "Gta.Data.Service"
-    needs: [drm-database, drm-database-2, drm-sdk] # drm-all-components
+    needs: [drm-database, drm-database2, drm-sdk] # drm-all-components
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Download bundle"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Feed with secrets"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Kubectl apply"
+      run: "echo sample: ${{ inputs.sample }}"
+  gta-data-service2:
+    name: "Gta.Data.Service2"
+    needs: [drm-database, drm-database2, drm-sdk] # drm-all-components
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Download bundle"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Feed with secrets"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Kubectl apply"
+      run: "echo sample: ${{ inputs.sample }}"
+  gta-data-service3:
+    name: "Gta.Data.Service3"
+    needs: [drm-database, drm-database2, drm-sdk] # drm-all-components
     runs-on: ubuntu-latest
     steps:
     - name: "Download bundle"

@@ -1,8 +1,147 @@
+name: "001 Orchestrator"
 on:
   workflow_dispatch:
+    inputs:
+      sample:
+        description: Bubbled-down
+        required: true
+        type: string
 
 jobs:
-  test:
+  # pfs-all-components
+  pfs-database:
+    name: "Pfs.Database"
     runs-on: ubuntu-latest
     steps:
-    - run: "echo aaa"
+    - name: "Download bundle"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Grate kickoff"
+      run: "echo sample: ${{ inputs.sample }}"
+  pfs-sdk:
+    name: "Pfs.Sdk"
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Download bundle"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Feed with secrets"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Kubectl apply"
+      run: "echo sample: ${{ inputs.sample }}"
+  pfs-sdk2:
+    name: "Pfs.Sdk2"
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Download bundle"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Feed with secrets"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Kubectl apply"
+      run: "echo sample: ${{ inputs.sample }}"
+  # dcp-all-components: [pfs]
+  dcp-database:
+    name: "Dcp.Database"
+    needs: [pfs-database, pfs-sdk, pfs-sdk2] # pfs-all-components
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Download bundle"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Grate kickoff"
+      run: "echo sample: ${{ inputs.sample }}"
+  dcp-api-gateway:
+    name: "Dcp.Api.Gateway"
+    needs: [pfs-database, pfs-sdk, pfs-sdk2] # pfs-all-components
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Download bundle"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Feed with secrets"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Kubectl apply"
+      run: "echo sample: ${{ inputs.sample }}"
+  dcp-data-service:
+    name: "Dcp.Data.Service"
+    needs: [pfs-database, pfs-sdk, pfs-sdk2] # pfs-all-components
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Download bundle"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Feed with secrets"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Kubectl apply"
+      run: "echo sample: ${{ inputs.sample }}"
+  dcp-data-service-2:
+    name: "Dcp.Data.Service2"
+    needs: [pfs-database, pfs-sdk, pfs-sdk2] # pfs-all-components
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Download bundle"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Feed with secrets"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Kubectl apply"
+      run: "echo sample: ${{ inputs.sample }}"
+  dcp-data-service-3:
+    name: "Dcp.Data.Service3"
+    needs: [pfs-database, pfs-sdk, pfs-sdk2] # pfs-all-components
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Download bundle"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Feed with secrets"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Kubectl apply"
+      run: "echo sample: ${{ inputs.sample }}"
+  # drm-all-components [pfs]
+  drm-database:
+    name: "Drm.Database"
+    needs: [pfs-database, pfs-sdk, pfs-sdk2] # pfs-all-components
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Download bundle"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Grate kickoff"
+      run: "echo sample: ${{ inputs.sample }}"
+  drm-database-2:
+    name: "Drm.Database2"
+    needs: [pfs-database, pfs-sdk, pfs-sdk2] # pfs-all-components
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Download bundle"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Grate kickoff"
+      run: "echo sample: ${{ inputs.sample }}"
+  drm-sdk:
+    name: "Drm.Sdk"
+    needs: [pfs-database, pfs-sdk, pfs-sdk2] # pfs-all-components
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Download bundle"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Feed with secrets"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Kubectl apply"
+      run: "echo sample: ${{ inputs.sample }}"
+  # proxy-all-components [dcp]
+  proxy-gateway:
+    name: "Proxy.Gateway"
+    needs: [dcp-database, dcp-api-gateway, dcp-data-service, dcp-data-service2, dcp-data-service3] # dcp-all-components
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Download bundle"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Feed with secrets"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Kubectl apply"
+      run: "echo sample: ${{ inputs.sample }}"
+  # gta-all-components [drm]
+  gta-data-service:
+    name: "Gta.Data.Service"
+    needs: [drm-database, drm-database-2, drm-sdk] # drm-all-components
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Download bundle"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Feed with secrets"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Kubectl apply"
+      run: "echo sample: ${{ inputs.sample }}"

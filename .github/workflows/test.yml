@@ -7,6 +7,14 @@ on:
         required: true
         type: string
 
+template-k8s: &k8s
+- name: "Download bundle"
+  run: "echo sample: ${{ inputs.sample }}"
+- name: "Feed with secrets"
+  run: "echo sample: ${{ inputs.sample }}"
+- name: "Kubectl apply"
+  run: "echo sample: ${{ inputs.sample }}"
+
 jobs:
   # pfs-all-components
   pfs-database:

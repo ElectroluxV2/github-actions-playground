@@ -1,0 +1,77 @@
+/// Component name must contain at least 2 capitalised segments joined with single dot, example component names:
+/// - `Sample.Data.Service`
+/// - `Sample.Infrastructure`
+/// - `ExtendedSample.Database2`
+///
+/// [Edit Regex online](https://regex101.com/r/tVUhk2)
+typealias ComponentName = String(matches(Regex(#"^(?:[A-Z][a-z0-9]+)+\.(?:[A-Z][a-z0-9]+\.?)*$"#)));
+
+/// Base class for all Components that can be deployed
+abstract class Component {
+  /// Component name, for constraints see [ComponentName]
+  name: ComponentName;
+}
+
+/// Represents absolute path to directory, the path:
+/// - must start with `/`
+/// - mist end with `/`
+/// [Edit Regex online](https://regex101.com/r/xxUjhV)
+typealias AbsolutePathToDirectory = String(matches(Regex("^/(?>(?>[^/\n])+/)+$")));
+
+class K8sComponent extends Component {
+  scriptsPath: AbsolutePathToDirectory;
+}
+
+class DbComponent extends Component {
+  scriptsPath: AbsolutePathToDirectory;
+}
+
+class TfComponent extends Component {
+  scriptsPath: AbsolutePathToDirectory;
+}
+
+typealias Compound = Listing<Component>(isDistinctBy((component) -> component.name))
+
+firstSampleCompound = new {
+  new K8sComponent {
+    name = "FirstSample.Data.Service"
+    scriptsPath = "/src/\(name)/K8s/"
+  }
+
+  new K8sComponent {
+    name = "FirstSample.Api.Gateway"
+    scriptsPath = "/src/\(name)/K8s/"
+  }
+
+  new DbComponent {
+    name = "FirstSample.Database"
+    scriptsPath = "/src/\(name)/"
+  }
+
+  new TfComponent {
+    name = "FirstSample.Infrastructure"
+    scriptsPath = "/src/\(name)/"
+  }
+}
+
+secondSampleCompound = new {
+  new K8sComponent {
+    name = "SecondSample.Data.Service"
+    scriptsPath = "/src/\(name)/K8s/"
+  }
+
+  new K8sComponent {
+    name = "SecondSample.Api.Gateway"
+    scriptsPath = "/src/\(name)/K8s/"
+  }
+
+  new DbComponent {
+    name = "SecondSample.Database"
+    scriptsPath = "/src/\(name)/"
+  }
+
+  new TfComponent {
+    name = "SecondSample.Infrastructure"
+    scriptsPath = "/src/\(name)/"
+  }
+}

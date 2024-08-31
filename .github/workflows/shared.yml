@@ -9,7 +9,7 @@ on:
         type: string
 
 jobs:
-  ${{ inputs.name }}:
+  ${{ github.event.inputs.name }}:
     name: "Deploy to Kubernetes"
     runs-on: ubuntu-latest
     steps:

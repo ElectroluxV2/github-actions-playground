@@ -10,7 +10,7 @@ on:
 jobs:
   pfs:
     name: "PFS: All components"
-    uses: .github/workflows/shared.yml
+    uses: ./.github/workflows/shared.yml
     with:
       sample: ${{ inputs.sample }}
       name: "pfs"

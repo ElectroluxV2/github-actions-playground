@@ -1,0 +1,21 @@
+on:
+  workflow_call:
+    inputs:
+      sample:
+        required: true
+        type: string
+      name:
+        required: true
+        type: string
+
+jobs:
+  ${{ inputs.name }}:
+    name: "Deploy to Kubernetes"
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Download bundle"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Feed with secrets"
+      run: "echo sample: ${{ inputs.sample }}"
+    - name: "Kubectl apply"
+      run: "echo sample: ${{ inputs.sample }}"
